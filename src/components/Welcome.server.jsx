@@ -6,6 +6,7 @@ import {
 } from '@shopify/hydrogen';
 import gql from 'graphql-tag';
 import {Suspense} from 'react';
+import Bug from './Bug.client';
 
 function ExternalIcon() {
   return (
@@ -148,13 +149,14 @@ function TemplateLinks() {
 /**
  * A server component that displays the content on the homepage of the Hydrogen app
  */
-export default function Welcome() {
+export default function Welcome({selectedParam}) {
   return (
     <div className="text-gray-900 pt-16 rounded-[40px] my-16 px-4 xl:px-12 bg-gradient-to-b from-white -mx-4 xl:-mx-12">
       <div className="text-center mb-16">
         <h1 className="font-extrabold mb-4 text-5xl md:text-7xl">
           Hello, Hydrogen
         </h1>
+        <Bug selectedParam={selectedParam} />
         <p className="text-lg mb-8">
           Welcome to your custom storefront. Let&rsquo;s get building.
         </p>
